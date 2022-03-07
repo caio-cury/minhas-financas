@@ -1,0 +1,16 @@
+.table_line {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    padding: 1.2rem 2rem;
+    border-bottom: 1px solid #E0E0E0
+}
+
+.icons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.icon {
+    cursor: pointer;
+}

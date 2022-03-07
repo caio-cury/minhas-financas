@@ -1,0 +1,14 @@
+.table {
+    flex-grow: 2;
+    font-family: 'Lato', sans-serif;
+}
+
+.table_head {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    padding: 1.2rem 2rem;
+}
+
+.table_body {
+    padding: 0 .7rem;
+}

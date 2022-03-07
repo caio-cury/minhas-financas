@@ -1,70 +1,179 @@
-# Getting Started with Create React App
+![](https://i.imgur.com/xG74tOh.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Desafio | Front-end - Módulo 3
 
-## Available Scripts
+Após alguns meses trabalhando em projetos mais simples, você foi designado pelo seu Tech Lead para desenvolver uma aplicação que será apresentada a um cliente muito importante.
 
-In the project directory, you can run:
+Para acessar o repositório da API que será consumida no front, acesse o seguinte [link](https://github.com/cubos-academy/dindin-api).
 
-### `npm start`
+Para o seu desenvolvimento foi liberado layout que você pode encontrar no seguinte [ link](https://www.figma.com/file/65wDh5PJwzSy7IYOS4AWAj).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Para acessar o pdf contendo as informações de id e class, acesse o seguinte [link](https://drive.google.com/file/d/1J-ccfMnJrRFxc-vxsRtbN8SHRulwal7U/view?usp=sharing).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+O sistema trata-se de uma aplicação para controles de finanças pessoais, e as funcionalidades são:
 
-### `npm test`
+#### Observação: Existem funcionalidades obrigatórias e opcionais!
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Cadastro de uma nova transação (**Obrigatório**)
+- Edição de uma transação (**Obrigatório**)
+- Exclusão de uma transação (**Obrigatório**)
+- Listagem de transações (**Obrigatório**)
+- Ordernação dos items conforme clicado no header da tabela nas seguintes colunas: Data, Dia da semana e Valor (**Obrigatório**)
+- Na parte de resumo, o valor de entradas,saídas e saldo é referente ao que está listado na tabela (**Obrigatório**)
+- A parte de filtros não é toda obrigatória, veja abaixo:
+  - Dia da semana (**Opcional**)
+  - Categoria (**Opcional**)
+  - Valor (**Obrigatório**)
 
-### `npm run build`
+## Dicas importantes
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Você receberá um _boilerplate_ (um projeto com algumas configurações prontas).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Para começar a trabalhar você precisará executar alguns comandos, mas isso é somente na **primeira vez**.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1.  Realizar o fork do repositório
+2.  Clonar para seu computador o fork feito
+3.  Executar o `npm install` (para instalar as dependências)
+4.  Executar o `npm start` (Para "rodar" o projeto! Esse passo deve ser executado todas as vezes que você for desenvolver a aplicação)
 
-### `npm run eject`
+Quando você fizer todos esse procedimentos, o projeto em `React` irá executar e exibir no seu navegador uma aplicação básica.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**Observação:** Caso não abra automaticamente o seu navegador, você pode acessar o projeto usando o endereço http://localhost:3000 .
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Detalhamento de Requisitos:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Cadastro de uma nova transação:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Para cadastrar uma nova transação o usuário deverá clicar no botão `Adicionar Registro`, que ficará logo abaixo da área de `resumo`.
 
-## Learn More
+![](https://i.imgur.com/9DLHda6.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Ao clicar no referido botão, um modal com a opção de adicionar informações de uma transação deve ser exibido:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![](https://i.imgur.com/8r0yEa7.png)
 
-### Code Splitting
+Nesse modal todas as informações devem ser preenchidas, lembrando que você pode adicionar uma `entrada` ou `saída` de dinheiro, por padrão o valor deve ser o de `saída`, caso o usuário queira adicionar um valor de entrada ele precisará clicar no botão **Entrada**.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+\*Todos os campos são obrigatórios!
 
-### Analyzing the Bundle Size
+Após realizar as validações, após o usuário clicar no botão **confirmar**, uma nova transação deve ser inserida e a tabela de listagem deve ser atualizada.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+É importante lembrar que quando adicionarmos uma nova transação, a área de resumo deve refletir o que a tabela está exibindo, refazendo assim todos os cálculos após a inserção de um novo registro.
 
-### Making a Progressive Web App
+### Editar uma transação:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Para editar uma transação o usuário deverá clicar no ícone do lápis, que se encontrará na tabela de listagem de transações:
 
-### Advanced Configuration
+![](https://i.imgur.com/crhos7x.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Esse ícone => ![](https://i.imgur.com/iFD6G3k.png)
 
-### Deployment
+Ao clicar no ícone de editar uma transação, o modal (que foi utilizado para adicionar uma nova transação) deverá ser aberto e as informações da transação "clicada", deverão ser preenchidas automaticamente, assim como a imagem abaixo:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+![](https://i.imgur.com/EyRegfx.png)
 
-### `npm run build` fails to minify
+\*Novamente, todos os campos são obrigatórios!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Após validar os campos e o usuário clicar em confirmar, a transação deverá ser atualizada na `API` usando requisição do tipo `patch` ou `put` e a transação deverá ser atualizada na tabela de listagem de transações.
+
+### Excluir uma transação:
+
+Para excluir uma transação o usuário deverá clicar no ícone da lixeira, que se encontrará na tabela de listagem de transações:
+
+![](https://i.imgur.com/crhos7x.png)
+
+Esse ícone => ![](https://i.imgur.com/X6GB3kh.png)
+
+Ao clicar nesse ícone, um "popup" irá aparecer para que o usuário confirme ou não a exclusão, fazendo com que não hajam exclusões por engano, veja abaixo como aparece o "popup":
+
+![](https://i.imgur.com/Ohhk1lhm.png)
+
+### Listagem de transações:
+
+As transações registradas por meio dos endpoints da `api`, deverão ser listadas numa tabela que ficará ao centro da página, nessa tabela teremos 6 colunas, sendo:
+
+1. **Data** da transação no formato `dd/mm/yyyy`
+2. **Dia da semana**, nessa coluna deveremos utilizar apenas os primeiros nomes dos dias da semana, ao invéz de Segunda-Feira, deveremos utilizar o formato `Segunda`.
+3. **Descrição**, nessa coluna listaremos as descrições informadas no cadastro de transação.
+4. **Categoria**, aqui vamos mostrar as categorias inseridas em cada uma das transações cadastradas.
+5. **Valor**, nessa coluna exibiremos os valores de cada uma das transações. Existem uma regra importante nas cores e nos sinais, para valores de **entrada de dinheiro (credit)** exibimos o número positivo e na cor <span style="color:#7B61FF"><b>roxa</b></span>, já para **Saídas de dinheiro (debit)** exibimos o número na cor <span style="color:#FA8C10"><b>laranja</b></span>.
+6. Na última coluna nós não teremos um cabeçalho, nessa coluna ficarão os botões de editar e excluir.
+
+![](https://i.imgur.com/jie9f1T.png)
+
+Cada linha da tabela representa uma transação. Portanto cada botão representa a ação para um registro.
+
+#### Cabeçalho da tabela:
+
+No cabeçalho da tabela deverá haver a opção de clicar e ordenar de forma **crescente** e **decrescente**, para isso basta o usuário clicar no nome da coluna, a cada clique a ordenação deve ser alterada entre **crescente** e **decrescente**.
+
+Cada vez que clicamos no nome da coluna, as ordenações feitas em outras colunas devem ser desfeitas, sendo assim, somente é possível ordenar uma coluna por vez.
+
+As colunas que possuem ordenação são: **Data**, **Dia da semana** e **Valor**.
+
+Veja abaixo o ícone que representa que a coluna está sendo ordenada:
+
+- Ordenando a coluna data de forma crescente (do menor para o maior)
+  - ![](https://i.imgur.com/E0cR53u.png)
+- Ordenando a coluna Dia da semana de forma decrescente (do maior para o menor)
+  - ![](https://i.imgur.com/RzNKinD.png)
+
+**Importante:** Somente a coluna em ordenação deve conter os ícones, resumidamente quando clicamos em uma coluna para ordenar, os outros ícones das demais colunas devem desaparecer.
+
+### Resumo das transações:
+
+O resumo das transações devem ser exibidos numa "box", onde teremos apenas 3 informações:
+
+- Entradas
+- Saídas
+- Saldo
+
+É importante ressaltar que os valores de entrada, saída e saldos são calculados com base nos elementos mostrados na tabela, ou seja, suponhamos que hajam 10 transações cadastradas na `api`, mas a tabela está recebendo um filtro por **dia da semana** e somente 3 transações estão sendo exibidas, basicamente o resumo deve ser calculado com base nessas 3 transações apenas.
+
+Veja na imagem abaixo, como deve ser o resumo;
+![](https://i.imgur.com/6Rlu6a7.png)
+
+### Filtros:
+
+A área de filtros por padrão é oculta, por isso você deve implementar a lógica para que quando o usuário clique no botão **Filtrar** a área de filtro seja exibida e quando clicar novamente seja ocultada, veja abaixo o botão que exibe/oculta a área de filtros:
+
+![](https://i.imgur.com/GCsalqk.png)
+
+Os filtros servem para dar granularidade aos dados, ou seja, para haver a possibilidade de exibir as transações conforme selecionamos requisitos para tal. Por exemplo, se disseremos que deve-se exibir apenas as transações realizadas aos domingos, basicamente deveríamos selecionar o domingo no filtro de **Dia da semana**, veja o exemplo abaixo:
+
+![](https://i.imgur.com/WRXubPL.png)
+
+Os filtros são cumulativos, ou seja, se você seleciona para filtrar **segunda** em **dia da semana**, depois seleciona **pix** em **categoria**, informa **valor mínimo 10** e **valor máximo 300**, todos os filtros devem ser levados em consideração. Resumidamente não devemos exibir na tabela transações com: Valores menores que 10, valores maiores que 300, realizadas em um dia diferente de segunda e nem outra categoria que não seja pix.
+
+O funcionamento dos filtros segue a seguinte ordem:
+
+1. Seleciona-se os filtros em dia da semana ou categoria
+2. Informa-se valores mínimos e/ou valores máximos
+3. Após selecionar os filtros desejados, clica-se no botão **aplicar filtros**.
+
+**Importante:** Não é obrigatório selecionar todos tipos de filtros (Dia da semana + Categoria + Valores Mínimos + Valores Máximo), pois todos eles são indepententes.
+
+Para limpar os filtros atuais, o usuário deverá clicar no botão **limpar filtros**
+
+**Importante:**
+
+1. Ao clicar em aplicar filtros sem nenhum filtro selecionado, o sistema deve exibir todas as transações disponíveis cadastradas.
+2. Ao clicar em limpar filtros, o sistema deve exibir todas as transações disponíveis cadastradas.
+
+Veja na imagem abaixo os botões:
+![](https://i.imgur.com/MEONJbE.png)
+
+## Aulas úteis:
+
+- [Layout flex, layouts internos e externos](https://plataforma.cubos.academy/curso/90bb4fdd-85c7-4f90-9753-38c264a80382/data/23/08/2021/aula/094b1cb4-e547-4154-8a30-404ecc2a0071/545a5556-135f-4ceb-9ca3-f26cbc8f7706)
+- [Fetch e assincronismo](https://plataforma.cubos.academy/curso/90bb4fdd-85c7-4f90-9753-38c264a80382/data/06/10/2021/aula/152f4b5a-0e89-444d-a9bc-a81ad4fb4a4e/b4537257-df85-4d43-af8f-2b665ae90412)
+- [Props](https://plataforma.cubos.academy/curso/90bb4fdd-85c7-4f90-9753-38c264a80382/data/08/11/2021/aula/1fc9bc35-4b14-4cc7-a5b5-2b15a7d231aa/869994ca-2a55-43e7-a6ec-117a7f5cff88)
+- [Props Children](https://plataforma.cubos.academy/curso/90bb4fdd-85c7-4f90-9753-38c264a80382/data/08/11/2021/aula/1fc9bc35-4b14-4cc7-a5b5-2b15a7d231aa/80469691-6c88-478b-9b4a-0e4b9ed88e34)
+- [Quando criar components](https://plataforma.cubos.academy/curso/90bb4fdd-85c7-4f90-9753-38c264a80382/data/08/11/2021/aula/1fc9bc35-4b14-4cc7-a5b5-2b15a7d231aa/27cd4073-ad83-499f-b30a-58ffa2ac869c)
+- [Estado](https://plataforma.cubos.academy/curso/90bb4fdd-85c7-4f90-9753-38c264a80382/data/10/11/2021/aula/47d0bbe4-785e-45bb-804d-59acfe571eb7/f53cd484-5331-4428-86a6-ebdb52811c4f)
+- [Eventos no React](https://plataforma.cubos.academy/curso/90bb4fdd-85c7-4f90-9753-38c264a80382/data/17/11/2021/aula/5411310f-c9e4-4b95-b692-80190bd981d2/4fadb246-0687-413f-9b4a-4473fea2afe5)
+- [Gerenciando multiplos inputs de formulário](https://plataforma.cubos.academy/curso/90bb4fdd-85c7-4f90-9753-38c264a80382/data/22/11/2021/aula/856db66a-314e-4663-8956-a1b81d076a58/a81a8ca1-ce45-467e-9b59-92f672e3da99)
+
+**LEMBRE-SE**: é melhor feito do que perfeito!!!
+
+###### tags: `front-end` `módulo 3` `React` `CSS` `desafio`
