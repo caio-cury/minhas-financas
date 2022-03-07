@@ -21,11 +21,16 @@
     font-family: 'Lato', sans-serif;
 }
 
+.table_filters_container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+    gap: 1rem;
+}
+
 .table_resume_container {
     display: flex;
     gap: 1.5rem;
-    justify-content: stretch;
-    align-items: flex-start;
     padding-top: 1.5rem;
 }
 
@@ -41,7 +46,6 @@
     background-image: var(--hot-line-gradient);
     border-radius: 5px;
     color: white;
-    cursor: pointer;
     padding: 1rem;
     text-align: center;
 }

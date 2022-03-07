@@ -6,6 +6,27 @@
     min-width: 250px;
 }
 
+.resume_card > h2 {
+    font-family: Rubik;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #2F2F2F;
+}
+
+.type {
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 15px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #2F2F2F;
+}
+
 .resume_line, 
 .balance {
     display: flex;
@@ -15,4 +36,26 @@
 
 .balance {
     border-top: 1px solid #EAEAEA
+}
+
+.entry,
+.exit,
+.balance_value {
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 15px;
+    letter-spacing: 0px;
+}
+
+.entry {
+    color: var(--entry);
+}
+
+.exit {
+    color: var(--exit);
+}
+
+.balance_value {
+    color: var(--balance);
 }

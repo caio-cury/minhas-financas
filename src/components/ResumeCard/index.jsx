@@ -7,16 +7,16 @@ export default function ResumeCard() {
         <div className={`${styles.resume_card} ${globalStyles.containers}`}>
             <h2>Resumo</h2>
             <div className={styles.resume_line}>
-                <span>Entradas</span>
-                <span>R$ 200,00</span>
+                <span className={styles.type}>Entradas</span>
+                <span className={styles.entry}>R$ 200,00</span>
             </div>
             <div className={styles.resume_line}>
-                <span>Saídas</span>
-                <span>R$ 50,00</span>
+                <span className={styles.type}>Saídas</span>
+                <span className={styles.exit}>R$ 50,00</span>
             </div>
             <div className={styles.balance}>
-                <span>Saldo</span>
-                <span>R$ 150,00</span>
+                <span className={styles.type}>Saldo</span>
+                <span className={styles.balance_value}>R$ 150,00</span>
             </div>
         </div>
 
