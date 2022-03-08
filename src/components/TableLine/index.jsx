@@ -5,16 +5,16 @@ import { useState } from 'react';
 import AddOrEditTransactionModal from '../AddOrEditTransactionModal/index';
 import ConfirmDeleteTransaction from '../ConfirmDeleteTransaction';
 
-export default function TableLine() {
+export default function TableLine({ id, date, weekDay, description, category, value }) {
     const [showEditModal, setShowEditMOdal] = useState(false);
     const [showConfirmDeleteTransaction, setShowConfirmDeleteTransaction] = useState(false);
     return (
         <div className={styles.table_line}>
-            <span>01/09/21</span>
-            <span>Quarta</span>
-            <span>Venda dos brigadeiros</span>
-            <span>Pix</span>
-            <span>R$ 200,00</span>
+            <span>{date}</span>
+            <span>{weekDay}</span>
+            <span>{description}</span>
+            <span>{category}</span>
+            <span>{value}</span>
             <span className={styles.icons}>
                 <img
                     onClick={() => setShowEditMOdal(true)}
@@ -30,12 +30,14 @@ export default function TableLine() {
                     />
                     {showConfirmDeleteTransaction &&
                         <ConfirmDeleteTransaction
+                            id={id}
                             close={() => setShowConfirmDeleteTransaction(false)}
                         />
                     }
                 </div>
             </span>
             {showEditModal && <AddOrEditTransactionModal
+                id={id}
                 title={'Editar Registro'}
                 closeModal={() => setShowEditMOdal(false)}
             />}
