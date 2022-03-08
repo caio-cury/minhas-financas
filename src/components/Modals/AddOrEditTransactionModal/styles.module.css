@@ -1,0 +1,58 @@
+.title_close_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.6rem;
+}
+
+.transaction_type_btn {
+    display: flex;
+}
+
+.modal_form {
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+}
+
+.entry_btn,
+.exit_btn {
+    all: unset;
+    background-color: #B9B9B9;
+    color: white;
+    cursor: pointer;
+    width: 50%;
+    padding: .5em 4em;
+}
+
+.entry_btn.selected {
+    background-image: var(--cold-line-gradient);
+}
+
+.exit_btn.selected {
+    background-image: var(--hot-line-gradient);
+}
+
+.entry_btn {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.exit_btn {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.confirm_btn {
+    all: unset;
+    background-color: var(--main-purple);
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    width: 50%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: .5em;
+    margin-top: 1.7rem;
+}

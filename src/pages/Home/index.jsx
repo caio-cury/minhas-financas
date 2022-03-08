@@ -6,6 +6,7 @@ import ResumeCard from '../../components/ResumeCard';
 import globalStyles from '../../global.module.css';
 import Filters from '../../components/Filters';
 import { useState } from 'react';
+import AddOrEditTransactionModal from '../../components/Modals/AddOrEditTransactionModal';
 
 export default function Home() {
   const [showFilters, setShowFilters] = useState(false);
@@ -33,6 +34,7 @@ export default function Home() {
           </div>
         </section>
       </main>
+      <AddOrEditTransactionModal />
     </div >
   );
 }

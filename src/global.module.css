@@ -19,3 +19,39 @@ body {
     background-color: #fafafa;
     box-shadow: 0px 2px 11px 0px #0000001A;
 }
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgb(0, 0, 0, .45);
+    display: grid;
+    place-items: center;
+}
+
+.modal_container {
+    background-color: white;
+    border-radius: 20px;
+    padding: 3rem;
+}
+
+.input_container {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    all: unset;
+    border: 1px solid #555555;
+    border-radius: 5px;
+    padding: .5em;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0px;
+    text-align: left;
+
+}
