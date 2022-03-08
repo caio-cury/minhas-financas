@@ -29,6 +29,7 @@ body {
     background-color: rgb(0, 0, 0, .45);
     display: grid;
     place-items: center;
+    z-index: 10;
 }
 
 .modal_container {
@@ -40,6 +41,8 @@ body {
 .input_container {
     display: flex;
     flex-direction: column;
+    position: relative;
+    padding-bottom: 1rem;
 }
 
 input {

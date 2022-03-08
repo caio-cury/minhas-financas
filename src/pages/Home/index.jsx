@@ -6,10 +6,11 @@ import ResumeCard from '../../components/ResumeCard';
 import globalStyles from '../../global.module.css';
 import Filters from '../../components/Filters';
 import { useState } from 'react';
-import AddOrEditTransactionModal from '../../components/Modals/AddOrEditTransactionModal';
+import AddOrEditTransactionModal from '../../components/AddOrEditTransactionModal';
 
 export default function Home() {
   const [showFilters, setShowFilters] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   return (
     <div className={styles.main_container}>
       <Header />
@@ -28,13 +29,20 @@ export default function Home() {
           </div>
           <div className={styles.resume_btn_container}>
             <ResumeCard />
-            <button className={styles.add_register}>
+            <button
+              className={styles.add_register}
+              onClick={() => setShowModal(true)}
+            >
               Adicionar Registro
             </button>
           </div>
         </section>
       </main>
-      <AddOrEditTransactionModal />
+      {showModal &&
+        <AddOrEditTransactionModal
+          title={'Adicionar Registro'}
+          closeModal={() => setShowModal(false)}
+        />}
     </div >
   );
 }

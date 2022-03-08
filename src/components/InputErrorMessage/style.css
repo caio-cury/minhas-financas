@@ -1,0 +1,5 @@
+.input-error-message {
+    color: var(--feedback-erro-normal);
+    position: absolute;
+    bottom: 0;
+}

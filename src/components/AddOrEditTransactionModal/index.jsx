@@ -1,10 +1,12 @@
-import globalStyles from '../../../global.module.css';
+import globalStyles from '../../global.module.css';
 import styles from './styles.module.css';
 import { useState } from 'react';
-import closeIcon from '../../../assets/close-icon.svg';
+import closeIcon from '../../assets/close-icon.svg';
+import useOnClickOutside from '../../hooks/useOnClickOutside';
 
-export default function AddOrEditTransactionModal() {
+export default function AddOrEditTransactionModal({ title, closeModal }) {
     const [entry, setEntry] = useState(true);
+    const closeModalRef = useOnClickOutside(() => closeModal())
     function handleTransactionTypeEntry(event) {
         event.preventDefault();
         setEntry(true);
@@ -15,10 +17,13 @@ export default function AddOrEditTransactionModal() {
     }
     return (
         <div className={globalStyles.modal}>
-            <div className={globalStyles.modal_container}>
+            <div
+                ref={closeModalRef}
+                className={globalStyles.modal_container}
+            >
                 <div className={styles.title_close_container}>
-                    <h2>Editar Transação</h2>
-                    <img src={closeIcon} alt="" />
+                    <h2>{title}</h2>
+                    <img className={styles.close_icon} onClick={() => closeModal()} src={closeIcon} alt="" />
                 </div>
                 <form className={styles.modal_form} action="">
                     <div className={styles.transaction_type_btn}>

@@ -5,14 +5,18 @@
     margin-bottom: 1.6rem;
 }
 
+.close_icon {
+    cursor: pointer;
+}
+
 .transaction_type_btn {
     display: flex;
+    margin-bottom: 1rem;
 }
 
 .modal_form {
     display: flex;
     flex-direction: column;
-    gap: .6rem;
 }
 
 .entry_btn,

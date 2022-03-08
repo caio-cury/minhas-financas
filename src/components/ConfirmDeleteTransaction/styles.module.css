@@ -1,0 +1,49 @@
+.popup_container {
+    top: 20px;
+    left: -4px;
+    position: absolute;
+    z-index: 1;
+}
+
+.card {
+    background-color: #E4F2FD;
+    border-radius: 4px;
+    padding: 1.2rem;
+    position: relative;
+}
+
+.arrow {
+    width: 0;
+    border: 6px solid transparent;
+    border-bottom: 6px solid  #E4F2FD;
+    margin-left: 10px;
+}
+
+.title {
+    display: block;
+    margin-bottom: 6px; 
+}
+
+.btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.confirm_btn,
+.cancel_btn {
+    all: unset;
+    border-radius: 4px;
+    color: white;
+    padding: 2px 10px;
+}
+
+.confirm_btn {
+    background-color: #3A9FF1;
+}
+
+.cancel_btn {
+    background-color: #FF576B;
+}
+
