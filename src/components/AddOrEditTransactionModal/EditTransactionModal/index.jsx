@@ -8,8 +8,8 @@ import { useContext } from 'react';
 import { TransactionsListContext } from '../../../contexts/transactionsList';
 
 export default function EditTransactionModal({ id, modalData, closeModal }) {
+    const closeModalRef = useOnClickOutside(() => closeModal());
     const { getTransactionsList } = useContext(TransactionsListContext);
-    const [entry, setEntry] = useState(true);
     const formValues = {
         value: modalData.value,
         category: modalData.category,
@@ -17,10 +17,14 @@ export default function EditTransactionModal({ id, modalData, closeModal }) {
         description: modalData.description
     }
     const [form, setForm] = useState(formValues);
-    const closeModalRef = useOnClickOutside(() => closeModal())
+    function handleChange(event) {
+        const { name, value } = event.target;
+        setForm({ ...form, [name]: value })
+    }
+    const [entry, setEntry] = useState(true);
     useEffect(() => {
         modalData.type === 'credit' ? setEntry(true) : setEntry(false);
-    }, [modalData])
+    }, [modalData]);
     function handleTransactionTypeEntry(event) {
         event.preventDefault();
         setEntry(true);
@@ -29,10 +33,7 @@ export default function EditTransactionModal({ id, modalData, closeModal }) {
         event.preventDefault();
         setEntry(false);
     }
-    function handleChange(event) {
-        const { name, value } = event.target;
-        setForm({ ...form, [name]: value })
-    }
+
     async function handleSubmit(event) {
         event.preventDefault();
         const body = {

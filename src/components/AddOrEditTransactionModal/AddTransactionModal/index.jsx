@@ -8,8 +8,8 @@ import { useContext } from 'react';
 import { TransactionsListContext } from '../../../contexts/transactionsList';
 
 export default function AddTransactionModal({ closeModal }) {
+    const closeModalRef = useOnClickOutside(() => closeModal());
     const { getTransactionsList } = useContext(TransactionsListContext);
-    const [entry, setEntry] = useState(true);
     const formValues = {
         date: "",
         description: "",
@@ -17,7 +17,11 @@ export default function AddTransactionModal({ closeModal }) {
         category: ""
     }
     const [form, setForm] = useState(formValues);
-    const closeModalRef = useOnClickOutside(() => closeModal())
+    function handleChange(event) {
+        const { name, value } = event.target;
+        setForm({ ...form, [name]: value })
+    }
+    const [entry, setEntry] = useState(true);
     function handleTransactionTypeEntry(event) {
         event.preventDefault();
         setEntry(true);
@@ -26,10 +30,7 @@ export default function AddTransactionModal({ closeModal }) {
         event.preventDefault();
         setEntry(false);
     }
-    function handleChange(event) {
-        const { name, value } = event.target;
-        setForm({ ...form, [name]: value })
-    }
+
     async function handleSubmit(event) {
         event.preventDefault();
         const body = {
@@ -98,7 +99,10 @@ export default function AddTransactionModal({ closeModal }) {
                             onChange={handleChange}
                         />
                     </div>
-                    <button onClick={handleSubmit} className={styles.confirm_btn} type='submit'>Confirmar</button>
+                    <button
+                        onClick={handleSubmit}
+                        className={styles.confirm_btn}
+                        type='submit'>Confirmar</button>
                 </form>
             </div>
         </div>
