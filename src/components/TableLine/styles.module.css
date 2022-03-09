@@ -5,6 +5,14 @@
     border-bottom: 1px solid #E0E0E0;
 }
 
+.entry {
+    color: var(--entry);
+}
+
+.exit {
+    color: var(--exit);
+}
+
 .icons {
     display: flex;
     justify-content: space-around;

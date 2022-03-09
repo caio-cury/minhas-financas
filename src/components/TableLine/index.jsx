@@ -2,19 +2,19 @@ import styles from './styles.module.css';
 import editIcon from '../../assets/edit-icon.svg';
 import deleteIcon from '../../assets/delete-icon.svg';
 import { useState } from 'react';
-import AddOrEditTransactionModal from '../AddOrEditTransactionModal/index';
+import EditTransactionModal from '../AddOrEditTransactionModal/EditTransactionModal';
 import ConfirmDeleteTransaction from '../ConfirmDeleteTransaction';
 
-export default function TableLine({ id, date, weekDay, description, category, value }) {
+export default function TableLine({ id, date, weekDay, description, category, value, type }) {
     const [showEditModal, setShowEditMOdal] = useState(false);
     const [showConfirmDeleteTransaction, setShowConfirmDeleteTransaction] = useState(false);
     return (
         <div className={styles.table_line}>
-            <span>{date}</span>
-            <span>{weekDay}</span>
+            <span>{new Date(date).toLocaleString().slice(0, -8)}</span>
+            <span>{weekDay.replace('-feira', '')}</span>
             <span>{description}</span>
             <span>{category}</span>
-            <span>{value}</span>
+            <span className={`${type === 'credit' ? styles.entry : styles.exit}`}>{value}</span>
             <span className={styles.icons}>
                 <img
                     onClick={() => setShowEditMOdal(true)}
@@ -36,9 +36,15 @@ export default function TableLine({ id, date, weekDay, description, category, va
                     }
                 </div>
             </span>
-            {showEditModal && <AddOrEditTransactionModal
+            {showEditModal && <EditTransactionModal
                 id={id}
-                title={'Editar Registro'}
+                modalData={{
+                    value,
+                    category,
+                    date,
+                    description,
+                    type
+                }}
                 closeModal={() => setShowEditMOdal(false)}
             />}
         </div>
