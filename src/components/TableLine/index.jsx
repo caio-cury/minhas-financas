@@ -6,18 +6,24 @@ import EditTransactionModal from '../AddOrEditTransactionModal/EditTransactionMo
 import ConfirmDeleteTransaction from '../ConfirmDeleteTransaction';
 
 export default function TableLine({ id, date, weekDay, description, category, value, type }) {
-    const [showEditModal, setShowEditMOdal] = useState(false);
+    const [showEditModal, setShowEditModal] = useState(false);
     const [showConfirmDeleteTransaction, setShowConfirmDeleteTransaction] = useState(false);
+    function formatWeekDay(weekDay) {
+        const shorter = weekDay.trim().replace('-feira', '');
+        const capital = shorter.slice(0, 1).toUpperCase();
+        const formated = capital + shorter.slice(1);
+        return formated;
+    }
     return (
         <div className={styles.table_line}>
             <span>{new Date(date).toLocaleString().slice(0, -8)}</span>
-            <span>{weekDay.replace('-feira', '')}</span>
+            <span>{formatWeekDay(weekDay)}</span>
             <span>{description}</span>
             <span>{category}</span>
-            <span className={`${type === 'credit' ? styles.entry : styles.exit}`}>{value}</span>
+            <span className={`${type === 'credit' ? styles.entry : styles.exit}`}>{Number(value).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</span>
             <span className={styles.icons}>
                 <img
-                    onClick={() => setShowEditMOdal(true)}
+                    onClick={() => setShowEditModal(true)}
                     className={styles.icon}
                     src={editIcon}
                     alt="Edit Icon"
@@ -45,7 +51,7 @@ export default function TableLine({ id, date, weekDay, description, category, va
                     description,
                     type
                 }}
-                closeModal={() => setShowEditMOdal(false)}
+                closeModal={() => setShowEditModal(false)}
             />}
         </div>
     );

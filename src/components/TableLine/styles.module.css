@@ -5,6 +5,15 @@
     border-bottom: 1px solid #E0E0E0;
 }
 
+.entry,
+.exit {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 17px;
+    letter-spacing: 0px;
+}
+
 .entry {
     color: var(--entry);
 }

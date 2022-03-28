@@ -2,16 +2,15 @@ import globalStyles from '../../global.module.css';
 import styles from './styles.module.css';
 import addIcon from '../../assets/add-icon.svg';
 import removeIcon from '../../assets/remove-icon.svg';
-import { useState } from 'react';
 
-export default function FilterBtn(props) {
-    const [selected, setSelected] = useState(false);
+export default function FilterBtn({ title, selected, handleSelectedChip }) {
+
     return (
         <span
-            onClick={() => setSelected(!selected)}
-            className={`${styles.filter_btn} ${globalStyles.containers} ${selected ? styles.purple : ''}`
+            onClick={() => handleSelectedChip(title)}
+            className={`${styles.filter_btn} ${globalStyles.containers} ${selected ? styles.selected_chip : ''}`
             }>
-            {props.children}
+            {title}
             <img src={selected ? removeIcon : addIcon} alt="" />
         </span>
     );

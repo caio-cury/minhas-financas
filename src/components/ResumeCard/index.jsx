@@ -15,22 +15,23 @@ export default function ResumeCard() {
     const exitsAmount = exits.reduce((acc, cur) => {
         return acc + Number(cur.value);
     }, 0);
+    const balanceAmount = entriesAmount - exitsAmount;
     return (
 
         <div className={`${styles.resume_card} ${globalStyles.containers}`}>
             <h2>Resumo</h2>
             <div className={styles.resume_line}>
                 <span className={styles.type}>Entradas</span>
-                <span className={styles.entry}>R$ {entriesAmount}</span>
+                <span className={styles.entry}>{entriesAmount.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</span>
 
             </div>
             <div className={styles.resume_line}>
                 <span className={styles.type}>Saídas</span>
-                <span className={styles.exit}>R$ {exitsAmount}</span>
+                <span className={styles.exit}>{exitsAmount.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</span>
             </div>
             <div className={styles.balance}>
                 <span className={styles.type}>Saldo</span>
-                <span className={styles.balance_value}>R$ {entriesAmount - exitsAmount}</span>
+                <span className={styles.balance_value}>{balanceAmount.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</span>
             </div>
         </div>
 

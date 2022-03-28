@@ -1,5 +1,5 @@
 .filters {
-    padding: 2rem;
+    padding: .7rem;
 }
 
 .titles_container,
@@ -29,10 +29,13 @@
     flex-wrap: wrap;
     gap: .7rem;
     padding: 1rem;
+    font-size: 9px;
+    max-height: 190px;
 }
 
 .value > input {
     width: 65px;
+    font-size: 10px;
 }
 
 .btns {

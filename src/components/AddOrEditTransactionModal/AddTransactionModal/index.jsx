@@ -37,7 +37,7 @@ export default function AddTransactionModal({ closeModal }) {
             date: new Date(form.date),
             week_day: new Intl.DateTimeFormat('pt-BR', { weekday: 'long' }).format(new Date(form.date)),
             description: form.description,
-            value: form.value,
+            value: form.value.replace(',', '.'),
             category: form.category,
             type: entry ? 'credit' : 'debit'
         }
